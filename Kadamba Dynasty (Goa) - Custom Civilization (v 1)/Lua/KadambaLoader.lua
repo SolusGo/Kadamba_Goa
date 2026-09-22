@@ -4,4 +4,5 @@
 --------------------------------------------------------------
 print("KADAMBA LOADER RUNNING")
 
+include("KadambaState")
 include("KadambaTrait")

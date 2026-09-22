@@ -29,6 +29,7 @@ The result is a flexible builder civilization with strong defensive tools. Kadam
 - [Victory paths](#victory-paths)
 - [Policy and empire synergies](#policy-and-empire-synergies)
 - [Kadamba bonus panel](#kadamba-bonus-panel)
+- [Reliability and AI behavior](#reliability-and-ai-behavior)
 - [Installation and building](#installation-and-building)
 - [Optional balance patch](#optional-balance-patch)
 - [Compatibility and alpha notes](#compatibility-and-alpha-notes)
@@ -95,7 +96,9 @@ Practical consequences:
 
 Kadamba gains additional Gold equal to **25% of the Gold generated on its active trade routes**.
 
-The bonus is implemented as a treasury payout at the beginning of the active player's turn. Fractions are retained between turns rather than discarded. For example, a calculated bonus of 2.75 Gold pays 2 immediately and carries the remaining 0.75 forward.
+The bonus is implemented as a treasury payout at the beginning of each Kadamba player's turn. It works for human and AI players through `GameEvents.PlayerDoTurn`. Fractions are retained between turns rather than discarded. For example, a calculated bonus of 2.75 Gold pays 2 immediately and carries the remaining 0.75 forward.
+
+Each campaign uses its own deterministic save-data namespace, so a remainder or Momentum timer from an older game cannot leak into a new campaign. The payout is also guarded by a per-player, per-turn marker: duplicate event processing cannot award the Gold twice.
 
 Because this is a separate payout, the route-selection interface may continue to show the route's normal value. The Kadamba bonus panel reports the extra payout and its unrounded value.
 
@@ -130,7 +133,7 @@ The bonus is defensive by nature: it does not help deep inside an enemy empire. 
 
 ## Unique building: Kadamba Temple
 
-The **Kadamba Temple** replaces the ordinary Temple and becomes available at **Philosophy**.
+The **Kadamba Temple** replaces the ordinary Temple and becomes available at **Philosophy**. Its database definition is cloned from the installed Brave New World Temple before Kadamba's unique effects are applied, preserving the normal Shrine requirement, purchase rules, Religion flavor, Faith yield, art metadata, and other base functionality.
 
 | Statistic | Kadamba Temple |
 |---|---:|
@@ -159,7 +162,7 @@ Every newly trained land unit in a city with a Kadamba Temple receives **+5 XP**
 
 ## Unique unit: Forest Guard
 
-The **Forest Guard** replaces the Swordsman. It is an early melee unit designed to control wooded territory and defend the Kadamba heartland.
+The **Forest Guard** replaces the Swordsman. It is an early melee unit designed to control wooded territory and defend the Kadamba heartland. Its database row and auxiliary data are cloned from the installed Swordsman, preserving normal AI roles, flavors, Iron requirement, purchase settings, sounds, and upgrade behavior.
 
 | Statistic | Forest Guard |
 |---|---:|
@@ -303,9 +306,26 @@ When the human player is Kadamba, an in-game panel displays the current state of
 - Number and combined yield of coastal cities
 - Turns remaining on Scholar Momentum
 - Whether the Civil Service Jungle bonus is active
-- Expected whole-Gold trade payout and the raw fractional bonus
+- Expected next whole-Gold trade payout and the raw fractional bonus
 
 The panel is an `InGameUIAddin` and appears near the upper-right portion of the interface. It automatically hides when the active player is not Kadamba.
+
+The panel is presentation-only. Gold payouts, dummy buildings, promotions, timers, city ownership reconciliation, and AI processing all remain in the gameplay script if the panel fails to load.
+
+## Reliability and AI behavior
+
+The Alpha implementation includes lifecycle safeguards for normal single-player, AI-controlled Kadamba, hot-seat, and multiplayer contexts where the Civ V Lua events are supported:
+
+- Every player's turn reconciles coastal, Jungle, and Momentum dummy buildings.
+- Every player's turn grants or removes the friendly-land promotion according to current ownership and unit eligibility.
+- Unit creation, upgrade, and conversion hooks apply promotion state promptly, with turn reconciliation as a safety net.
+- City founding and capture hooks refresh dummy buildings promptly, with turn reconciliation as a safety net.
+- Scholar Momentum expires authoritatively for both human and AI Kadamba.
+- Trade income is campaign-scoped, fraction-preserving, and idempotent per player and turn.
+- Mayurasharma has explicit leader flavors and major/minor civilization approach biases emphasizing defense, coastal growth, infrastructure, Gold, Culture, Religion, and Science over reckless conquest.
+- The Kadamba Temple and Forest Guard inherit their base components' AI flavors.
+
+Scholar Momentum intentionally remains **eight turns on every game speed**. This is a fixed design choice rather than an accidental omission; Quick games receive proportionally more value per technology than Epic or Marathon games.
 
 ## Installation and building
 
@@ -323,6 +343,19 @@ The panel is an `InGameUIAddin` and appears near the upper-right portion of the 
 4. Build the solution.
 5. Start Civilization V and enable **Kadamba Dynasty (Goa) - Custom Civilization** in the Mods menu.
 
+### Run validation and regression tests
+
+With Python 3 installed, run these commands from the repository root:
+
+```text
+python Tools/validate_mod.py
+python Tools/test_gameplay.py
+```
+
+The validator loads the project into a temporary copy of the local Brave New World core database. It checks project packaging, action order, VFS intent, Temple and Swordsman inheritance, Shrine and Iron requirements, promotions, AI data, localization, icon atlases, and DDS dimensions. It also reports any newly discovered base Temple or Swordsman auxiliary table that has not been explicitly reviewed.
+
+The deterministic gameplay model contains 32 regression checks covering human and AI turns, payout idempotence, fractional persistence and campaign isolation, Momentum timing, city lifecycle, unit ownership and upgrades, inheritance, AI flavors, and UI/gameplay separation.
+
 The repository tracks the source project rather than generated build products. ModBuddy's `Build`, `Packages`, `.civ5mod`, `.modinfo`, user-settings, and temporary files are intentionally excluded from Git.
 
 ### Existing built copy
@@ -339,15 +372,14 @@ Then enable the mod from Civilization V's Mods menu before starting a game.
 
 `SQL/Kadamba_Balance_Optional.sql` is included in the project but is **not executed by the current ModBuddy actions**. It is intended as an optional starting point for a lower-powered variant.
 
-The file currently makes these database changes when manually enabled:
+The file currently makes these database changes when manually enabled after the core inheritance action:
 
 - Reduces Kadamba Temple Wonder Production from 10% to 5%.
 - Raises Forest Guard cost from 70 to 75 Production.
-- Sets `TradeRouteResourceModifier` on Scholar's Defiance to 15.
 
-Note that the playable 25% trade-Gold payout is controlled by `TRADE_BONUS_PERCENT` in `Lua/KadambaTrait.lua`. The optional SQL file does **not** change that Lua value, so enabling the SQL alone does not reduce the scripted trade-Gold payout to 15%.
+The playable 25% trade-Gold payout is controlled by `TRADE_BONUS_PERCENT` in `Lua/KadambaTrait.lua` and mirrored by the presentation-only UI. The old, misleading `TradeRouteResourceModifier` update has been removed because it did not change the scripted payout.
 
-To activate the patch as part of a build, add it as an `UpdateDatabase` action in ModBuddy and review the Lua trade constant if a true 15% Gold variant is desired.
+To activate the patch as part of a build, add it as an `UpdateDatabase` action in ModBuddy after `SQL/Kadamba_CoreInheritance.sql`. Review both Lua constants if a lower trade-Gold percentage is also desired.
 
 ## Compatibility and alpha notes
 
@@ -356,7 +388,6 @@ To activate the patch as part of a build, add it as an `UpdateDatabase` action i
 - Text is currently provided in English only.
 - The civilization uses the Asian art style, the Indian civilization art definition, the Swordsman unit model, and Ramkhamhaeng's leader scene alongside its custom icons and static artwork.
 - The bonus panel occupies a fixed interface location and may overlap with other UI mods that use the same area.
-- The trade payout is handled by Lua at active-player turn start. In ordinary single-player, this processes the human Kadamba player; AI-controlled Kadamba players are not given the same per-turn scripted trade payout by that handler.
 - Several trait effects are implemented through invisible buildings and promotions. Other mods that heavily replace city, unit, or turn-event behavior may require compatibility testing.
 - No compatibility with major overhaul mods is claimed unless specifically tested.
 
@@ -365,19 +396,22 @@ To activate the patch as part of a build, add it as an `UpdateDatabase` action i
 ```text
 Kadamba_Goa/
 ├── Kadamba_Dynasty_Civ5_Mod.civ5sln
-└── Kadamba Dynasty (Goa) - Custom Civilization (v 1)/
+├── Kadamba Dynasty (Goa) - Custom Civilization (v 1)/
     ├── Kadamba_Dynasty_Civ5_Mod.civ5proj
     ├── Art/       # Civilization, leader, unit, map, and Dawn of Man textures
-    ├── Lua/       # Trait behavior and Lua loader
-    ├── SQL/       # Disabled optional balance patch
+    ├── Lua/       # Campaign state, trait lifecycle, and Lua loader
+    ├── SQL/       # Base-row inheritance and disabled optional balance patch
     ├── UI/        # In-game Kadamba bonus panel
     └── XML/       # Civilization data, units, buildings, promotions, and text
+├── Tools/         # Database validator and deterministic gameplay tests
+└── README.md
 ```
 
 The active database actions load:
 
 1. `XML/Kadamba_GameData.xml`
-2. `XML/Kadamba_Text.xml`
+2. `SQL/Kadamba_CoreInheritance.sql`
+3. `XML/Kadamba_Text.xml`
 
 The active UI entry points load:
 

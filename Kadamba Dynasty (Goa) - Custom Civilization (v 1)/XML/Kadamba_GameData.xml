@@ -21,7 +21,7 @@
 			<IconAtlas>KADAMBA_ICON_ATLAS</IconAtlas>
 			<PortraitIndex>0</PortraitIndex>
 			<AlphaIconAtlas>KADAMBA_ALPHA_ATLAS</AlphaIconAtlas>
-			<MapImage>Art/Map_Kadamba_512.dds</MapImage>
+			<MapImage>Art/Map_Kadamba_360x412.dds</MapImage>
 			<DawnOfManQuote>TXT_KEY_CIV5_DAWN_KADAMBA_TEXT</DawnOfManQuote>
 			<DawnOfManImage>Art/DOM_Kadamba.dds</DawnOfManImage>
 		</Row>
@@ -53,6 +53,59 @@
 			<IconAtlas>KADAMBA_LEADER_ATLAS</IconAtlas>
 		</Row>
 	</Leaders>
+
+	<Leader_Flavors>
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_OFFENSE" Flavor="4" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_DEFENSE" Flavor="8" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_CITY_DEFENSE" Flavor="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_MILITARY_TRAINING" Flavor="5" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_RECON" Flavor="4" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_RANGED" Flavor="6" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_MOBILE" Flavor="4" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_NAVAL" Flavor="6" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_NAVAL_RECON" Flavor="5" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_NAVAL_GROWTH" Flavor="8" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_NAVAL_TILE_IMPROVEMENT" Flavor="8" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_AIR" Flavor="4" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_EXPANSION" Flavor="6" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_GROWTH" Flavor="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_TILE_IMPROVEMENT" Flavor="8" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_INFRASTRUCTURE" Flavor="8" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_PRODUCTION" Flavor="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_GOLD" Flavor="8" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_SCIENCE" Flavor="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_CULTURE" Flavor="8" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_HAPPINESS" Flavor="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_GREAT_PEOPLE" Flavor="6" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_WONDER" Flavor="6" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_RELIGION" Flavor="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_DIPLOMACY" Flavor="6" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_SPACESHIP" Flavor="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_WATER_CONNECTION" Flavor="9" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_NUKE" Flavor="2" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_USE_NUKE" Flavor="2" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_ESPIONAGE" Flavor="4" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_ANTIAIR" Flavor="5" />
+		<Row LeaderType="LEADER_MAYURASHARMA" FlavorType="FLAVOR_AIR_CARRIER" Flavor="5" />
+	</Leader_Flavors>
+
+	<Leader_MajorCivApproachBiases>
+		<Row LeaderType="LEADER_MAYURASHARMA" MajorCivApproachType="MAJOR_CIV_APPROACH_WAR" Bias="3" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MajorCivApproachType="MAJOR_CIV_APPROACH_HOSTILE" Bias="3" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MajorCivApproachType="MAJOR_CIV_APPROACH_DECEPTIVE" Bias="3" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MajorCivApproachType="MAJOR_CIV_APPROACH_GUARDED" Bias="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MajorCivApproachType="MAJOR_CIV_APPROACH_AFRAID" Bias="4" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MajorCivApproachType="MAJOR_CIV_APPROACH_FRIENDLY" Bias="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MajorCivApproachType="MAJOR_CIV_APPROACH_NEUTRAL" Bias="6" />
+	</Leader_MajorCivApproachBiases>
+
+	<Leader_MinorCivApproachBiases>
+		<Row LeaderType="LEADER_MAYURASHARMA" MinorCivApproachType="MINOR_CIV_APPROACH_IGNORE" Bias="3" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MinorCivApproachType="MINOR_CIV_APPROACH_FRIENDLY" Bias="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MinorCivApproachType="MINOR_CIV_APPROACH_PROTECTIVE" Bias="7" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MinorCivApproachType="MINOR_CIV_APPROACH_CONQUEST" Bias="3" />
+		<Row LeaderType="LEADER_MAYURASHARMA" MinorCivApproachType="MINOR_CIV_APPROACH_BULLY" Bias="3" />
+	</Leader_MinorCivApproachBiases>
 
 	<Leader_Traits>
 		<Row>
@@ -170,24 +223,6 @@
 
 	<Buildings>
 		<Row>
-			<Type>BUILDING_KADAMBA_TEMPLE</Type>
-			<BuildingClass>BUILDINGCLASS_TEMPLE</BuildingClass>
-			<Cost>100</Cost>
-			<GoldMaintenance>2</GoldMaintenance>
-			<PrereqTech>TECH_PHILOSOPHY</PrereqTech>
-			<Description>TXT_KEY_BUILDING_KADAMBA_TEMPLE</Description>
-			<Help>TXT_KEY_BUILDING_KADAMBA_TEMPLE_HELP</Help>
-			<Civilopedia>TXT_KEY_BUILDING_KADAMBA_TEMPLE_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_BUILDING_KADAMBA_TEMPLE_STRATEGY</Strategy>
-			<FaithCost>-1</FaithCost>
-			<UnlockedByBelief>true</UnlockedByBelief>
-			<SpecialistType>SPECIALIST_PRIEST</SpecialistType>
-			<GreatPeopleRateChange>0</GreatPeopleRateChange>
-			<WonderProductionModifier>10</WonderProductionModifier>
-			<IconAtlas>KADAMBA_ICON_ATLAS</IconAtlas>
-			<PortraitIndex>0</PortraitIndex>
-		</Row>
-		<Row>
 			<Type>BUILDING_KADAMBA_COASTAL_BONUS</Type>
 			<BuildingClass>BUILDINGCLASS_KADAMBA_COASTAL_BONUS</BuildingClass>
 			<Cost>-1</Cost>
@@ -229,16 +264,6 @@
 
 	<Building_YieldChanges>
 		<Row>
-			<BuildingType>BUILDING_KADAMBA_TEMPLE</BuildingType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_KADAMBA_TEMPLE</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
 			<BuildingType>BUILDING_KADAMBA_COASTAL_BONUS</BuildingType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>2</Yield>
@@ -258,79 +283,6 @@
 			<Yield>1</Yield>
 		</Row>
 	</Building_FeatureYieldChanges>
-
-	<Building_DomainFreeExperiences>
-		<Row>
-			<BuildingType>BUILDING_KADAMBA_TEMPLE</BuildingType>
-			<DomainType>DOMAIN_LAND</DomainType>
-			<Experience>5</Experience>
-		</Row>
-	</Building_DomainFreeExperiences>
-
-	<Units>
-		<Row>
-			<Class>UNITCLASS_SWORDSMAN</Class>
-			<Type>UNIT_KADAMBA_FOREST_GUARD</Type>
-			<PrereqTech>TECH_IRON_WORKING</PrereqTech>
-			<Combat>14</Combat>
-			<Cost>70</Cost>
-			<Moves>2</Moves>
-			<CombatClass>UNITCOMBAT_MELEE</CombatClass>
-			<Domain>DOMAIN_LAND</Domain>
-			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
-			<Description>TXT_KEY_UNIT_KADAMBA_FOREST_GUARD</Description>
-			<Civilopedia>TXT_KEY_UNIT_KADAMBA_FOREST_GUARD_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_UNIT_KADAMBA_FOREST_GUARD_STRATEGY</Strategy>
-			<Help>TXT_KEY_UNIT_KADAMBA_FOREST_GUARD_HELP</Help>
-			<MilitarySupport>true</MilitarySupport>
-			<MilitaryProduction>true</MilitaryProduction>
-			<Pillage>true</Pillage>
-			<ObsoleteTech>TECH_STEEL</ObsoleteTech>
-			<GoodyHutUpgradeUnitClass>UNITCLASS_LONGSWORDSMAN</GoodyHutUpgradeUnitClass>
-			<AdvancedStartCost>20</AdvancedStartCost>
-			<XPValueAttack>3</XPValueAttack>
-			<XPValueDefense>3</XPValueDefense>
-			<UnitArtInfo>ART_DEF_UNIT_SWORDSMAN</UnitArtInfo>
-			<UnitFlagAtlas>KADAMBA_UNIT_FLAG_ATLAS</UnitFlagAtlas>
-			<UnitFlagIconOffset>0</UnitFlagIconOffset>
-			<IconAtlas>KADAMBA_UNIT_ATLAS</IconAtlas>
-			<PortraitIndex>0</PortraitIndex>
-		</Row>
-	</Units>
-
-	<Unit_FreePromotions>
-		<Row>
-			<UnitType>UNIT_KADAMBA_FOREST_GUARD</UnitType>
-			<PromotionType>PROMOTION_KADAMBA_WOODLAND_DEFENDER</PromotionType>
-		</Row>
-		<Row>
-			<UnitType>UNIT_KADAMBA_FOREST_GUARD</UnitType>
-			<PromotionType>PROMOTION_WOODSMAN</PromotionType>
-		</Row>
-	</Unit_FreePromotions>
-	<Unit_ResourceQuantityRequirements>
-		<Row>
-			<UnitType>UNIT_KADAMBA_FOREST_GUARD</UnitType>
-			<ResourceType>RESOURCE_IRON</ResourceType>
-			<Cost>1</Cost>
-		</Row>
-	</Unit_ResourceQuantityRequirements>
-	<Unit_AITypes>
-		<Row>
-			<UnitType>UNIT_KADAMBA_FOREST_GUARD</UnitType>
-			<UnitAIType>UNITAI_ATTACK</UnitAIType>
-		</Row>
-		<Row>
-			<UnitType>UNIT_KADAMBA_FOREST_GUARD</UnitType>
-			<UnitAIType>UNITAI_DEFENSE</UnitAIType>
-		</Row>
-	</Unit_AITypes>
-	<Unit_ClassUpgrades>
-		<Row>
-			<UnitType>UNIT_KADAMBA_FOREST_GUARD</UnitType>
-			<UnitClassType>UNITCLASS_LONGSWORDSMAN</UnitClassType>
-		</Row>
-	</Unit_ClassUpgrades>
 
 	<UnitPromotions>
 		<Row>

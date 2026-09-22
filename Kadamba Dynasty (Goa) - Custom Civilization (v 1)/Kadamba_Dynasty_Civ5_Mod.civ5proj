@@ -46,6 +46,11 @@
       <Action>
         <Set>OnModActivated</Set>
         <Type>UpdateDatabase</Type>
+        <FileName>SQL/Kadamba_CoreInheritance.sql</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
         <FileName>XML/Kadamba_Text.xml</FileName>
       </Action>
     </ModActions>
@@ -76,6 +81,10 @@
   <ItemGroup>
     <Content Include="Lua\KadambaLoader.lua">
       <SubType>Lua</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="Lua\KadambaState.lua">
+      <SubType>Lua</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Lua\KadambaTrait.lua">
@@ -84,23 +93,27 @@
     </Content>
     <Content Include="SQL\Kadamba_Balance_Optional.sql">
       <SubType>SQL</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
+      <ImportIntoVFS>False</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\Kadamba_CoreInheritance.sql">
+      <SubType>SQL</SubType>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="XML\Kadamba_GameData.xml">
       <SubType>Designer</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="XML\Kadamba_Text.xml">
       <SubType>Designer</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="UI\KadambaBonusPanel.xml">
       <SubType>Designer</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="UI\KadambaBonusPanel.lua">
       <SubType>Lua</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
+      <ImportIntoVFS>False</ImportIntoVFS>
     </Content>
     <Content Include="Art\DOM_Kadamba.dds">
       <SubType>Content</SubType>
@@ -154,30 +167,6 @@
       <SubType>Content</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\KadambaFlag_128.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaFlag_256.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaFlag_32.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaFlag_45.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaFlag_64.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaFlag_80.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
     <Content Include="Art\KadambaIcon_128.dds">
       <SubType>Content</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
@@ -199,30 +188,6 @@
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
     <Content Include="Art\KadambaIcon_80.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaLogo_128.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaLogo_256.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaLogo_32.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaLogo_45.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaLogo_64.dds">
-      <SubType>Content</SubType>
-      <ImportIntoVFS>True</ImportIntoVFS>
-    </Content>
-    <Content Include="Art\KadambaLogo_80.dds">
       <SubType>Content</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
@@ -250,7 +215,7 @@
       <SubType>Content</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>
-    <Content Include="Art\Map_Kadamba_512.dds">
+    <Content Include="Art\Map_Kadamba_360x412.dds">
       <SubType>Content</SubType>
       <ImportIntoVFS>True</ImportIntoVFS>
     </Content>

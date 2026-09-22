@@ -9,3 +9,7 @@ Packages/
 # Generated manifests and ad-hoc packages
 *.modinfo
 *.zip
+
+# Python validation caches
+__pycache__/
+*.py[cod]
