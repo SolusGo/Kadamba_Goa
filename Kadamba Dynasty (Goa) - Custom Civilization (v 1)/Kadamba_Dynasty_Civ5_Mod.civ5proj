@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Deploy" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <ProjectGuid>{db94908a-b4b0-40e9-bf66-6283988edac2}</ProjectGuid>
+    <Name>Kadamba Dynasty (Goa) - Custom Civilization</Name>
+    <Guid>4453b9f9-2077-4445-9c95-b4517573832b</Guid>
+    <ModVersion>1</ModVersion>
+    <Stability>Alpha</Stability>
+    <Teaser>Adds the Kadamba Dynasty of Goa as a playable civilization.</Teaser>
+    <Description>Adds the Kadamba Dynasty of Goa as a coastal-jungle civilization focused on trade, temples, culture, and defensive warfare.</Description>
+    <Authors>ThatOneYi</Authors>
+    <SpecialThanks>Firaxis Games; CivFanatics Community</SpecialThanks>
+    <AffectsSavedGames>true</AffectsSavedGames>
+    <MinCompatibleSaveVersion>0</MinCompatibleSaveVersion>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <SupportsMac>true</SupportsMac>
+    <AssemblyName>Kadamba_Dynasty_Civ5_Mod</AssemblyName>
+    <RootNamespace>Kadamba_Dynasty_Civ5_Mod</RootNamespace>
+
+    <ModReferences />
+
+    <ModContent>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>Kadamba Loader</Name>
+        <Description>Loads Kadamba trait Lua.</Description>
+        <FileName>Lua/KadambaLoader.lua</FileName>
+      </Content>
+      <Content>
+        <Type>InGameUIAddin</Type>
+        <Name>Kadamba Bonus Panel</Name>
+        <Description>Shows active Kadamba bonuses in-game.</Description>
+        <FileName>UI/KadambaBonusPanel.xml</FileName>
+      </Content>
+    </ModContent>
+
+    <ModActions>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/Kadamba_GameData.xml</FileName>
+      </Action>
+      <Action>
+        <Set>OnModActivated</Set>
+        <Type>UpdateDatabase</Type>
+        <FileName>XML/Kadamba_Text.xml</FileName>
+      </Action>
+    </ModActions>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Package Only' ">
+    <PackageMod>true</PackageMod>
+    <DeployMod>false</DeployMod>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Deploy Only' ">
+    <PackageMod>false</PackageMod>
+    <DeployMod>true</DeployMod>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Art" />
+    <Folder Include="Lua" />
+    <Folder Include="SQL" />
+    <Folder Include="UI" />
+    <Folder Include="XML" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Lua\KadambaLoader.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Lua\KadambaTrait.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="SQL\Kadamba_Balance_Optional.sql">
+      <SubType>SQL</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\Kadamba_GameData.xml">
+      <SubType>Designer</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="XML\Kadamba_Text.xml">
+      <SubType>Designer</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\KadambaBonusPanel.xml">
+      <SubType>Designer</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="UI\KadambaBonusPanel.lua">
+      <SubType>Lua</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\DOM_Kadamba.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\ForestGuard_128.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\ForestGuard_256.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\ForestGuard_32.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\ForestGuard_45.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\ForestGuard_64.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\ForestGuard_80.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaAlpha_128.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaAlpha_256.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaAlpha_32.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaAlpha_45.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaAlpha_64.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaAlpha_80.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaFlag_128.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaFlag_256.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaFlag_32.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaFlag_45.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaFlag_64.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaFlag_80.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaIcon_128.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaIcon_256.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaIcon_32.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaIcon_45.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaIcon_64.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaIcon_80.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaLogo_128.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaLogo_256.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaLogo_32.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaLogo_45.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaLogo_64.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaLogo_80.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaUnitFlag_128.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaUnitFlag_256.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaUnitFlag_32.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaUnitFlag_45.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaUnitFlag_64.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\KadambaUnitFlag_80.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Map_Kadamba_512.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Mayurasharma_128.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Mayurasharma_256.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Mayurasharma_32.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Mayurasharma_45.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Mayurasharma_64.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+    <Content Include="Art\Mayurasharma_80.dds">
+      <SubType>Content</SubType>
+      <ImportIntoVFS>True</ImportIntoVFS>
+    </Content>
+  </ItemGroup>
+
+  <Import Project="$(MSBuildExtensionsPath)\Firaxis\ModBuddy\Civ5Mod.targets" />
+</Project>

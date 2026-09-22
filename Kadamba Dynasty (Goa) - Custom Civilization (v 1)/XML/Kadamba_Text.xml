@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Language_en_US>
+
+		<Row Tag="TXT_KEY_CIV_KADAMBA_DESC">
+			<Text>Kadamba Dynasty</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CIV_KADAMBA_SHORT_DESC">
+			<Text>Kadamba</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CIV_KADAMBA_ADJECTIVE">
+			<Text>Kadamba</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_LEADER_MAYURASHARMA">
+			<Text>Mayurasharma</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_TRAIT_KADAMBA_SCHOLARS_DEFIANCE_SHORT">
+			<Text>Scholar's Defiance</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_TRAIT_KADAMBA_SCHOLARS_DEFIANCE">
+			<Text>Coastal Cities gain +2 [ICON_GOLD] Gold and +1 [ICON_CULTURE] Culture. After Civil Service, Jungle tiles worked by Kadamba cities yield +1 [ICON_PRODUCTION] Production. Trade Routes generate +25% Gold. After discovering a technology, cities gain +15% Production toward buildings for 8 turns. Units receive +10% Combat Strength in friendly lands.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_KADAMBA_TEMPLE">
+			<Text>Kadamba Temple</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_KADAMBA_TEMPLE_HELP">
+			<Text>Unique Kadamba replacement for the Temple. Provides +2 [ICON_PEACE] Faith, +1 [ICON_CULTURE] Culture, and +10% Production when constructing Wonders in this city. Newly trained land units receive +5 XP.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_KADAMBA_TEMPLE_PEDIA">
+			<Text>The Kadamba Temple represents the dynasty's stone temple tradition and its fusion of sacred legitimacy, regional identity, and royal prestige.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_KADAMBA_TEMPLE_STRATEGY">
+			<Text>Build Kadamba Temples in high-production or coastal cities to support Faith, Culture, and Wonder construction.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_KADAMBA_COASTAL_BONUS">
+			<Text>Kadamba Coastal Bonus</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_KADAMBA_JUNGLE_BONUS">
+			<Text>Kadamba Jungle Bonus</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_BUILDING_KADAMBA_SCHOLAR_MOMENTUM">
+			<Text>Kadamba Scholar Momentum</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_KADAMBA_FOREST_GUARD">
+			<Text>Forest Guard</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_KADAMBA_FOREST_GUARD_HELP">
+			<Text>Replaces the Swordsman. Receives +20% Combat Strength in Forest and Jungle and ignores Jungle movement penalties.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_KADAMBA_FOREST_GUARD_PEDIA">
+			<Text>Forest Guards are elite defenders of the Konkan forests, trained to fight among dense terrain and protect temple-cities from outside powers.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_UNIT_KADAMBA_FOREST_GUARD_STRATEGY">
+			<Text>Use Forest Guards to dominate wooded chokepoints and defend jungle-heavy territory.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_KADAMBA_WOODLAND_DEFENDER">
+			<Text>Woodland Defender</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_KADAMBA_WOODLAND_DEFENDER_HELP">
+			<Text>+20% Combat Strength in Forest and Jungle.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_KADAMBA_FRIENDLY_LANDS">
+			<Text>Scholar's Defiance</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_KADAMBA_FRIENDLY_LANDS_HELP">
+			<Text>+10% Combat Strength in friendly lands.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CIV5_DAWN_KADAMBA_TEXT">
+			<Text>Great Mayurasharma, founder of a realm born from defiance, your people rose from the forests of the Konkan coast to build a kingdom of temples, trade, and quiet strength. Will wisdom defend itself once more?</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_LEADER_MAYURASHARMA_PEDIA">
+			<Text>Mayurasharma is remembered as the founder of the Kadamba realm, a figure of scholarly origin whose legacy suits a civilization built around learning, defense, temples, and regional sovereignty.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CIV5_KADAMBA_TEXT_1">
+			<Text>The Kadambas ruled across parts of the western Deccan and Konkan region, with a design here focused on coastal prosperity, jungle development, temple culture, and resilient defense.</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_NAME_BANAVASI">
+			<Text>Banavasi</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_NAME_GOPAKAPATTANA">
+			<Text>Gopakapattana</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_NAME_CHANDRAPURA">
+			<Text>Chandrapura</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_NAME_HALSI">
+			<Text>Halsi</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_NAME_VAINGINIM">
+			<Text>Vainginim</Text>
+		</Row>
+
+		<Row Tag="TXT_KEY_CITY_NAME_KONKANAPURA">
+			<Text>Konkanapura</Text>
+		</Row>
+
+	</Language_en_US>
+</GameData>

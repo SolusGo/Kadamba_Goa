@@ -1,0 +1,11 @@
+# ModBuddy generated output
+Build/
+Packages/
+*.civ5mod
+*.civ5suo
+*.user
+.vs/
+
+# Generated manifests and ad-hoc packages
+*.modinfo
+*.zip

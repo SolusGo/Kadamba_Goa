@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+	<Grid ID="KadambaPanel"
+		Anchor="R,T"
+		Offset="20,90"
+		Size="560,190"
+		Style="Grid9DetailFive140"
+		ConsumeMouse="0">
+
+		<Label ID="TitleLabel"
+			Anchor="C,T"
+			Offset="0,10"
+			Font="TwCenMT20"
+			String="Kadamba Bonuses"
+			ColorSet="Beige_Black"/>
+
+		<Stack ID="BonusStack"
+			Anchor="L,T"
+			Offset="20,42"
+			StackGrowth="Down"
+			Spacing="8"
+			Size="520,0">
+
+			<Label ID="BonusLabel"
+				Font="TwCenMT18"
+				String=""
+				ColorSet="Beige_Black"
+				WrapWidth="520"/>
+
+		</Stack>
+
+	</Grid>
+</Context>
